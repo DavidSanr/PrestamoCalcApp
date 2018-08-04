@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/MontoEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:hint="Monto"
+        android:inputType="number"
+        android:padding="20dp" />
+
+
+    <EditText
+        android:id="@+id/TasaEdit"
+        android:hint="Tasa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:gravity="center_horizontal"
+        android:padding="20dp"
+        />
+
+    <EditText
+        android:id="@+id/MesesEdit"
+        android:hint="Meses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:gravity="center_horizontal"
+        android:padding="20dp"
+        android:maxLength="2"
+
+        />
+
+
+    <TextView
+        android:id="@+id/PagoMenEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:gravity="center_horizontal"
+        android:inputType="number"
+        android:padding="20dp"
+        android:text="Pago mensual"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/CalcularButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular Pago Mensual"
+        android:gravity="center_horizontal"
+        android:padding="20dp"/>
+
+    <Button
+        android:id="@+id/amortizarButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="20dp"
+        android:text="Desplegar Amotizacion" />
+
+
+</LinearLayout>
