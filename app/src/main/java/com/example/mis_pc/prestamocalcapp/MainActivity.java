@@ -15,6 +15,7 @@ import java.util.List;
 
 import static java.lang.Double.parseDouble;
 import static java.lang.Float.parseFloat;
+import static java.lang.Integer.getInteger;
 import static java.lang.Integer.parseInt;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,7 +44,19 @@ public class MainActivity extends AppCompatActivity {
 
         calcularP.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (mesesP.length() != 0 && montoP.length() != 0 && tasaP.length() != 0) {
+                if(mesesP.length()== 0) {
+                    mesesP.setError("Debe de ingresar un valor");
+                    return;
+                }
+
+                if(montoP.length()== 0) {
+                    montoP.setError("Debe de ingresar un valor");
+                    return;
+                }
+                if((tasaP.length()== 0) && (Integer.parseInt(tasaP.getText().toString()) < 12)) {
+                    mesesP.setError("Debe de ingresar un valor mayor de 12");
+                    return;
+                }
 
                     PagosMensual = PrestamoHelper.CalcImpuesto(
                             parseInt(mesesP.getText().toString()),
@@ -56,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-            }
+
 
            // Toast toast = Toast.makeText(this, "Debe de rellenar los campos", Toast.LENGTH_SHORT);
             //toast.show();
@@ -70,7 +83,20 @@ public class MainActivity extends AppCompatActivity {
                 Intent in = new Intent(MainActivity.this, DisplayInformation.class);
 
 //                String[] periodos = (String[])PagosMensual.get(2);
+//                Validaciones
+                if(mesesP.length()== 0) {
+                    mesesP.setError("Debe de ingresar un valor");
+                    return;
+                }
 
+                if(montoP.length()== 0) {
+                    montoP.setError("Debe de ingresar un valor");
+                    return;
+                }
+                if((tasaP.length()== 0) && (Integer.parseInt(tasaP.getText().toString()) < 12)) {
+                    mesesP.setError("Debe de ingresar un valor mayor de 12");
+                    return;
+                }
 //                in.putExtra("periodos",periodos);
                 in.putExtra("meses",mesesP.getText().toString());
                 in.putExtra("interes",tasaP.getText().toString());

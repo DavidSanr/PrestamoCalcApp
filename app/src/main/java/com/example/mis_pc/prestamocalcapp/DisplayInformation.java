@@ -25,8 +25,8 @@ public class DisplayInformation extends AppCompatActivity {
         double interes= in.getDoubleExtra("Intereses",10);
         double monto  = in.getDoubleExtra("Monto",10000);
         double monthlyPayment = PrestamoHelper.CalcImpuesto(meses,monto,interes);
-        String[] Amortizacion = new String[meses+10];
-        Amortizacion[0] = "Payment#     Interest     Principal     Balance";
+        String[] Amortizacion = new String[meses + 1];
+        Amortizacion[0] = "Payment#        Interest       Principal       Balance";
         int years = meses/12;
 
         double annualRate = interes;
@@ -42,7 +42,7 @@ public class DisplayInformation extends AppCompatActivity {
             principal = monthlyPayment - interest;
             balance = balance - principal;
 
-            Amortizacion[i] = i + " | " + df.format(interes)+ "% | " +df.format(principal)  + "$ | " + df.format(balance)+ "$";
+            Amortizacion[i] = i + "   |    " + df.format(interes)+ "%   |   " +df.format(principal)  + "$   |   " + df.format(balance)+ "$";
         }
 
 //        String[] periodos = {"hola","klk","hi"};
